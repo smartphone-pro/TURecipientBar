@@ -193,6 +193,38 @@ void *TURecipientsSelectionContext = &TURecipientsSelectionContext;
 	
 }
 
+- (void)replaceRecipient:(nonnull id<TURecipient>)from to:(nonnull id<TURecipient>)to {
+	NSIndexSet *changedIndex = [NSIndexSet indexSetWithIndex:[_recipients indexOfObject:from]];
+	
+	[self willChange:NSKeyValueChangeRemoval valuesAtIndexes:changedIndex forKey:@"recipients"];
+	[_recipients replaceObjectAtIndex:changedIndex.firstIndex withObject:to];
+	[self didChange:NSKeyValueChangeRemoval valuesAtIndexes:changedIndex forKey:@"recipients"];
+	
+	UIControl *recipientView = [_recipientViews objectAtIndex:changedIndex.firstIndex];
+	
+	UIControl *addingView;
+	if ([self.recipientsBarDelegate respondsToSelector:@selector(recipientsBar:viewForRecipient:)]) {
+		addingView = [self.recipientsBarDelegate recipientsBar:self viewForRecipient:to];
+	}
+	if (addingView == nil) {
+		addingView = [self _defaultRecipientViewForRecipient:to];
+	}
+	[addingView addTarget:self action:@selector(selectRecipientButton:) forControlEvents:UIControlEventTouchUpInside];
+	[self addSubview:addingView];
+
+	[_recipientViews replaceObjectAtIndex:changedIndex.firstIndex withObject:addingView];
+	
+	[self _setNeedsRecipientLayout];
+	
+	if (self.expanded) {
+		recipientView.alpha = 1.0;
+	} else {
+		recipientView.alpha = 0.0;
+	}
+	
+	[self _updateSummary];
+}
+
 - (void)_updateSummary
 {
 	if (_recipients.count > 0) {

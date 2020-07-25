@@ -187,6 +187,15 @@ typedef NS_ENUM(NSInteger, TURecipientsBarDisplayMode) {
  */
 - (void)removeRecipient:(nonnull id<TURecipient>)recipient;
 
+/** Replace a recipient.
+ 
+ This will both replace the recipient from the array of recipients and will also update the view, whether it is in searching mode or not.
+ 
+ @param from A recipient to replace.
+ @param to A new recipient
+ */
+- (void)replaceRecipient:(nonnull id<TURecipient>)from to:(nonnull id<TURecipient>)to;
+
 /** The currently selected recipient.
  
  If the bar is in search mode, you can use this to select the token that represents it. If the bar is not searching, this has no effect.
