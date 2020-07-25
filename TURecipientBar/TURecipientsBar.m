@@ -210,7 +210,9 @@ void *TURecipientsSelectionContext = &TURecipientsSelectionContext;
 		addingView = [self _defaultRecipientViewForRecipient:to];
 	}
 	[addingView addTarget:self action:@selector(selectRecipientButton:) forControlEvents:UIControlEventTouchUpInside];
+	
 	[self addSubview:addingView];
+	[recipientView removeFromSuperview];
 
 	[_recipientViews replaceObjectAtIndex:changedIndex.firstIndex withObject:addingView];
 	
