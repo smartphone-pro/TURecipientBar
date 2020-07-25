@@ -679,7 +679,7 @@ void *TURecipientsSelectionContext = &TURecipientsSelectionContext;
 	UIControlState state = UIControlStateNormal;
 	NSDictionary *attributes = [self recipientTitleTextAttributesForState:state];
 	for (TURecipientButton *button in _recipientViews) {
-		if ([button isKindOfClass:[TURecipientButton class]]) {
+		if (![button isKindOfClass:[TURecipientButton class]]) {
 			continue;
 		}
 		

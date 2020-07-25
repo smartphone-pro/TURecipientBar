@@ -78,6 +78,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		00501E5424CBDEF70058B778 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		110611C51742E2D400730F01 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		110611C81742E2D400730F01 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		110611CA1742E2D400730F01 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -91,7 +92,6 @@
 		110611DA1742E2D400730F01 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		110611DC1742E2D400730F01 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		110611DE1742E2D400730F01 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		110611E11742E2D400730F01 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		110611E31742E2D400730F01 /* TUViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TUViewController.h; sourceTree = "<group>"; };
 		110611E41742E2D400730F01 /* TUViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TUViewController.m; sourceTree = "<group>"; };
 		110611EE1742E63100730F01 /* TURecipientsBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TURecipientsBar.h; sourceTree = "<group>"; };
@@ -323,7 +323,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = TU;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = ThinkUltimate;
 				TargetAttributes = {
 					110611C41742E2D400730F01 = {
@@ -345,11 +345,11 @@
 			};
 			buildConfigurationList = 110611C01742E2D400730F01 /* Build configuration list for PBXProject "TURecipientBar" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
+				Base,
 			);
 			mainGroup = 110611BC1742E2D400730F01;
 			productRefGroup = 110611C61742E2D400730F01 /* Products */;
@@ -458,7 +458,7 @@
 		110611E01742E2D400730F01 /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				110611E11742E2D400730F01 /* en */,
+				00501E5424CBDEF70058B778 /* Base */,
 			);
 			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
@@ -470,6 +470,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -519,6 +520,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
