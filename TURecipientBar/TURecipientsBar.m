@@ -216,6 +216,20 @@ void *TURecipientsSelectionContext = &TURecipientsSelectionContext;
 	
 	[self _setNeedsRecipientLayout];
 	
+	if (self.animatedRecipientsInAndOut) {
+		void(^animations)(void) = ^{
+			[self layoutIfNeeded];
+		};
+		
+		if ([UIView respondsToSelector:@selector(animateWithDuration:delay:usingSpringWithDamping:initialSpringVelocity:options:animations:completion:)]) {
+			[UIView animateWithDuration:0.5 delay:0.0 usingSpringWithDamping:0.7 initialSpringVelocity:0.2 options:0 animations:animations completion:nil];
+		} else {
+			[UIView animateWithDuration:0.5 animations:animations];
+		}
+	} else {
+		[self layoutIfNeeded];
+	}
+
 	if (self.expanded) {
 		recipientView.alpha = 1.0;
 	} else {
