@@ -676,7 +676,7 @@ void *TURecipientsSelectionContext = &TURecipientsSelectionContext;
 {
 	[super tintColorDidChange];
 	
-	UIControlState state = UIControlStateNormal;
+	/*UIControlState state = UIControlStateNormal;
 	NSDictionary *attributes = [self recipientTitleTextAttributesForState:state];
 	for (TURecipientButton *button in _recipientViews) {
 		if (![button isKindOfClass:[TURecipientButton class]]) {
@@ -686,7 +686,7 @@ void *TURecipientsSelectionContext = &TURecipientsSelectionContext;
 		NSString *text = [button titleForState:state] ?: [button attributedTitleForState:state].string ?: @"";
 		NSAttributedString *attributedText = [[NSAttributedString alloc] initWithString:text attributes:attributes];
 		[button setAttributedTitle:attributedText forState:state];
-	}
+	}*/
 }
 
 
